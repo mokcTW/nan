@@ -1,16 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <H2>車牌</H2>
-    <P>9533-B7</P>
-    <H2>車主</H2>
-    <P>某某某2</P>
-
-</body>
-</html>
+<!--Design by Cotpear _Start-->
+請輸入密碼，以顯示內容。
+<input id="EPassword">
+<button onclick="multiDecrypt($('#EPassword').val())">解密</button>
+<script>
+    var encryption = [
+            "U2FsdGVkX182lfEJLkfPLN3V1h2cBJVT804ACkBm5iWrSBmz4n1RcZ/2IoVQQ8FcjdISzMF/WRCe+X52obZOG1QRGw3IdP3grEo7h6JvsqIrYaPLA9Z5lLojbWabMYGZx5dLhedNgwHyH8hUywvA0g5Tqd2qDJcieKu6kN5cJa8Oc35RPQibm+mCortytaVnvkXTic3MiMgk5KPklY/TdHbq6IOtmiHGuGBs8aAgGW2i4HJ2gNKbIRlTWtTBdyrFIiXD05g9+k5mrxuJBa+GH373Sn4rQ7D7TxknCfCRnxjj6eXqoCXfgSxIJ/wJW9BgBMgQLGk/i7SWIQrvaQ/3yo1xdmfVRR9NXpGQMd0dvSrO3GJg1rxUD2IbOzIxlRY4BKFtLfZk0ABqF3nN65r0sl1Ts9GJl39BHaudkAoaV2vgKOSJKFiOAk4X1YgMjGVLPHoK+y6PCuyw9GVLPz0N41pS6qO97MfpFwlbzGAhBhEmTLRWP7lIciPfjGnadtPCWZ19fNc0xBhX4Q010c0ibVKVkAcUBX7sFFHE+sBnVLdChjx7sVxzCMc58XiFimud+gpUU3UccO5YX11meLoobjHc+xM8UDCaLd/jGvdwg3GGiJV5G2LrtMGRuQkFXBl+KPd8HWAs/XmYFBSupiL2dNVzNWPXOLCud6hQfsbshVkkwIxzEYW/lrb8ZLmMAzKAKSCY1gVuW+EwweJYEAVuDNlyrk3nsCBDpGLyHp9q6VrdOJR3wFlxymy4qVxLMOs0WV9o+B6r0aU8EBj+u6nUAHZ9ujAgWJA0fdMJrZhvkqEHVnOCz+JgpzrRJcs25YhUe1mHtO/3wZryVZDz/eHOTgp6PpTuXqsg08Fn4m0GXxU=",
+            "U2FsdGVkX182lfEJLkfPLN3V1h2cBJVT804ACkBm5iWrSBmz4n1RcZ/2IoVQQ8FcjdISzMF/WRCe+X52obZOG1QRGw3IdP3grEo7h6JvsqIrYaPLA9Z5lLojbWabMYGZx5dLhedNgwHyH8hUywvA0g5Tqd2qDJcieKu6kN5cJa8Oc35RPQibm+mCortytaVnvkXTic3MiMgk5KPklY/TdHbq6IOtmiHGuGBs8aAgGW2i4HJ2gNKbIRlTWtTBdyrFIiXD05g9+k5mrxuJBa+GH373Sn4rQ7D7TxknCfCRnxjj6eXqoCXfgSxIJ/wJW9BgBMgQLGk/i7SWIQrvaQ/3yo1xdmfVRR9NXpGQMd0dvSrO3GJg1rxUD2IbOzIxlRY4BKFtLfZk0ABqF3nN65r0sl1Ts9GJl39BHaudkAoaV2vgKOSJKFiOAk4X1YgMjGVLPHoK+y6PCuyw9GVLPz0N41pS6qO97MfpFwlbzGAhBhEmTLRWP7lIciPfjGnadtPCWZ19fNc0xBhX4Q010c0ibVKVkAcUBX7sFFHE+sBnVLdChjx7sVxzCMc58XiFimud+gpUU3UccO5YX11meLoobjHc+xM8UDCaLd/jGvdwg3GGiJV5G2LrtMGRuQkFXBl+KPd8HWAs/XmYFBSupiL2dNVzNWPXOLCud6hQfsbshVkkwIxzEYW/lrb8ZLmMAzKAKSCY1gVuW+EwweJYEAVuDNlyrk3nsCBDpGLyHp9q6VrdOJR3wFlxymy4qVxLMOs0WV9o+B6r0aU8EBj+u6nUAHZ9ujAgWJA0fdMJrZhvkqEHVnOCz+JgpzrRJcs25YhUe1mHtO/3wZryVZDz/eHOTgp6PpTuXqsg08Fn4m0GXxU=",
+        ],
+        canDeCrypt = 0;
+    function multiDecrypt(pwd) {
+        encryption.forEach((item, i) => {
+            try {
+                canDeCrypt = Decrypt(item, pwd)
+            } catch (e) {
+                if (canDeCrypt == 0) {
+                    canDeCrypt = 0
+                }
+            }
+        })
+        if (canDeCrypt == 0) {
+            alert("密碼錯誤")
+        } else {
+            //ok
+            document.getElementById("result").innerHTML = canDeCrypt;
+        }
+    }
+    function Decrypt(item, pwd) {
+        return decodeURIComponent(
+            CryptoJS.AES.decrypt(
+                item, pwd
+            ).toString(CryptoJS.enc.Utf8)
+        )
+    }
+</script>
+<br />
+<br />
+<div id="result"></div>
+<!--Design by Cotpear _End-->
