@@ -142,7 +142,7 @@
             <input id="staticrypt-password"
                    type="password"
                    name="password"
-                   placeholder="Passphrase"
+                   placeholder="輸入密碼"
                    autofocus/>
 
             <label id="staticrypt-remember-label" class="staticrypt-remember hidden">
@@ -152,7 +152,7 @@
                 Remember me
             </label>
 
-            <input type="submit" class="staticrypt-decrypt-button" value="DECRYPT"/>
+            <input type="submit" class="staticrypt-decrypt-button" value="確認"/>
         </form>
     </div>
 
@@ -6158,10 +6158,10 @@
 
 <script>
     // variables to be filled when generating the file
-    var encryptedMsg = '7d7b5ad01b7fa465bd9ec3bad1583fbe5de494f47cfa98b7ed543758bc72e4ff95eb303743ee997d4a51351db321b83eU2FsdGVkX19Ip3MGuU8jsIz894eBVsPJjKycZZX7qBU2iA8YwE0VXafxwvfycQ8dJyrSLDe4M+GjTX/8Boyoxqav8IEenrpgiPaVBedH6GPBjinMg28ICYCBpGQD+X/W4MGm0DlRs1pWq1PPX1o/0zuT2J4+44fYbJaNXl5kQG0fCN56kaXwJ8eOlKBYaqHw+oYem9vnSdeH4WslRzb8ikza/RRRWx9qFs5GQrjz/KMBPTCOBN1dMhkrLNI9koIqqDtlFStQ1JtbJvniTeG9hNZCWXuSHK7UGPa0XeOnlk/TgkzymcYg32EQ7Hbjjedq0vQ1moIQkx8PG6efSMUvwdENR/hBJnJ2RK9zBWRzMCQz19FA46UDmabPjUswm+Rj/dGtButsb/rI8E9zdAl5rX31AZM60OBUgY8wqOXZAux4KozTgad3Robytpq9x4uicFKUq4eYjs4GywVWqNbkh7DwX2Wu3b8dYfdOFKj8QK8=',
-        salt = '9d4e4559b4d6acd799ef6a71453a2c9b',
+    var encryptedMsg = 'e521c9ffd231bbef90c35e229761dabb908e62aaae3fb390ea6b1230ee737afaac93ecaa69458c5e509ca3d8351605ebU2FsdGVkX19tqJopSYS1nBK9nPydiR8981ZCGCobxzhXratrNsZB0XlgawMJ7avBX3BlIM+qdAj/3mukavW1RKX+YgfgeCLF5uG37N80H+HHIOa9DXX8urZyUMXCEIaXp+9pnFt7SjytVVxlggcJ9ckMnFHaHlv24c/tI67jjK9SGDzWis+EKu1PtZ9+y0ouhYOkXw9/uj2Tf1snW3MtXZ4KO27xmqt7MY1hMIPy3R7tJUxy8kmnG/GL93GeZELw6TaMwP1m7rftUInf6uwWHeKsi5lk5ojtio0QQ+/59eyohOzLQn4W9VvVAI9vzWwBK2Ye04t1Ue3cmPJ4qnW/GSnW8NzZkaEdzhQXfOlszBtuHJLkGaOkpxoo2pVEFB+nAuSgsnF8xHW5XC4sUN6N8mB9n3fVKyzEBUUCuwSmK0X7EC5Q04H8XBcDzHlcwxylBkEAe7+FYYKYyqEsjEJOo7O5z+7Y+loS7x/vIeYkNEc=',
+        salt = 'b4d55e226fe7e7155e0a461ed0a18ae0',
         isRememberEnabled = true,
-        rememberDurationInDays = 0; // 0 means forever
+        rememberDurationInDays = 1; // 0 means forever
 
     // constants
     var rememberPassphraseKey = 'staticrypt_passphrase',
