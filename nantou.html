@@ -2,7 +2,7 @@
 <html class="staticrypt-html">
 <head>
     <meta charset="utf-8">
-    <title>加密網頁</title>
+    <title>Protected Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- do not cache this page -->
@@ -132,7 +132,7 @@
 <div class="staticrypt-page">
     <div class="staticrypt-form">
         <div class="staticrypt-instructions">
-            <p class="staticrypt-title">加密網頁</p>
+            <p class="staticrypt-title">Protected Page</p>
             <p></p>
         </div>
 
@@ -142,17 +142,17 @@
             <input id="staticrypt-password"
                    type="password"
                    name="password"
-                   placeholder="密碼"
+                   placeholder="Passphrase"
                    autofocus/>
 
             <label id="staticrypt-remember-label" class="staticrypt-remember hidden">
                 <input id="staticrypt-remember"
                        type="checkbox"
                        name="remember"/>
-                記住密碼
+                Remember me
             </label>
 
-            <input type="submit" class="staticrypt-decrypt-button" value="送出"/>
+            <input type="submit" class="staticrypt-decrypt-button" value="DECRYPT"/>
         </form>
     </div>
 
@@ -6158,10 +6158,10 @@
 
 <script>
     // variables to be filled when generating the file
-    var encryptedMsg = '89614803fa280d2be1e403bcb281fb9f9f3d5400498d917aa2cbb52151a8606a52742c15b6f7bf0463bbb2c39a18f4efU2FsdGVkX19tTx1ilJpjXKLfhdhyPj/M/eUlmDTG0/tQICW+qdueb6hkfN46tlVEaw6aMQu7Cwy5QpXFbU2E6nEWMFY7uM2GRn4Ivx2ABAQWVFG4phzS+5ul09BHy2n5Eptp4B0LusrzRCEJqTN/WBxUtujM3UWUpkkRi6GhEM2eanHhtHhE/yQZ6Sp1sNSJPmdKcQVk05x484bRPuxRzw0bDzE9aXuOp7ZgHjOadKgzT8jHTgsniYn5Me+o7NSsbx5/VqTeJf0F2ctXajCcFj7GIruGbj9WzNtzmHQ0eMhIo5efNJK/ucUJML23tqjT1ROmpnTHYyeAxIgmwbNWzoEUXah/gOXaznnfPVOr7mq8/KvcpnQ3dVH9Wcrl95b42ibzfH52yjVR549szgVIss2nlw8Likj0IELJFTDgBcsdXb9lU8VhzqTYhH2FslG4DtYy2xI/BnxvdI5xWnQsfyOoAdtstEAlVjEaBHRJuL4=',
-        salt = 'b2b695302facf1bf9f77e47c2cabc447',
+    var encryptedMsg = '544225627d07408b050294f7a4604a36990a022e8457e8834bfc7298362d8edec8c3240f6b3d40464dc8e909959658ebU2FsdGVkX1805GCwSrQjWJMwYWpNw5TEl7sN5K5RGwdUnfs7G3fbU8FHlGj3HRyynQUQOp8dO0RuiSBHYiclbI65OS1aQyo4wK1eoxodMw1qf8Prsk6q2yELZYI7/Xb5lmJmchNL2WOH5EKgQT0BAEr+1x2QWuv1V90W26VDmRU8J0CmkoXGmThsRNTSpSl6qX1kH0r+xFZe/GWvCm6HZzTMJCygjh5QmIo2CuZ125LpHowLr1EBtmNROkTOaN1cp+tXUJZxGu0gvzjY+jSA71Fx/MKUpXCBX+fAJStkKnji1HPt+lHvppelsw/029WuJFLCqrUVVjDEOY8YqShcLYuKyHowFGlbwhQ9umm6Zl+ZXOE5cGGJ+1LVtzZGSJl6YWlEy/0NfAzsKHV32BAPWLoDwkjOMhxzKrZg2Ooj1oRiZ8v0Nfuov35Vexa3ic6lW+8BjdS2ZePQwPA9WSLxgis4GpMfL5E5b/cek1WT9XId6GRMzmd8UyMvAivozgl8ppJUl8ckFnzrmJUl9GHazDQXoE8sBbPw7rFE+qKx6GyH2G/5ikgYXZlIOsOJ5UhhEQkgr3a7DjDO6zP+9Ma5gNUfEBX2SfH09hbsIZw/vFKswspO3pLc7IaTdIfhRVoZda9L9ph5g4hOUWFu9TpnPZ1uEmRYjP6L1olUeYRZf8Vdt/PnLHJXzg8GabbyJl0D752tNBQ31bkvSHwBB65TZie7tkJ0ZZ4WFZRPxHyA0NmecN09jikUG0VYyTkSDzmk9GVRTTYmAUXbf2YRrLxkO+awYFsH1TiWcIyE0nHy0QUTt3H06FY1bVkSMkoAOjA87OsWqwZsWPwqkNd8Et9MWw==',
+        salt = 'ac583f2d68ab7cd26cc874d2635da985',
         isRememberEnabled = true,
-        rememberDurationInDays = 1; // 0 means forever
+        rememberDurationInDays = 0; // 0 means forever
 
     // constants
     var rememberPassphraseKey = 'staticrypt_passphrase',
